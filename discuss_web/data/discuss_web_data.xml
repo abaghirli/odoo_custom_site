@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="menu_discuss_web" model="website.menu">
+            <field name="name">Discuss</field>
+            <field name="url">/discuss</field>
+            <field name="parent_id" ref="website.main_menu"/>
+            <field name="sequence" type="int">30</field>
+        </record>
+        <record id="action_open_website" model="ir.actions.act_url">
+            <field name="name">Website Home</field>
+            <field name="target">self</field>
+            <field name="url">/discuss</field>
+        </record>
+        <record id="base.open_menu" model="ir.actions.todo">
+            <field name="action_id" ref="action_open_website"/>
+            <field name="state">open</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="discuss_script" inherit_id="website.assets_frontend" name="Frontend Discuss Script">
+        <xpath expr="/t" position="inside">
+                <xpath expr="." position="inside">
+                    <script type="text/javascript" src="/mail/static/src/js/many2many_tags_email.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/client_action.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/chat_window.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/extended_chat_window.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/composer.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/chat_manager.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/chatter.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/followers.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/thread.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/systray.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/tour.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/utils.js"></script>
+                    <script type="text/javascript" src="/mail/static/src/js/window_manager.js"></script>
+
+                    <link rel="stylesheet" href="/mail/static/src/less/announcement.less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/client_action.less" type="text/less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/chat_window.less" type="text/less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/extended_chat_window.less" type="text/less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/composer.less" type="text/less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/chatter.less" type="text/less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/followers.less" type="text/less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/thread.less" type="text/less"/>
+                    <link rel="stylesheet" href="/mail/static/src/less/systray.less" type="text/less"/>
+                </xpath>
+        </xpath>
+    </template>
+
+    <!-- Layout add nav and footer -->
+    <template id="header_footer_custom" inherit_id="website.footer_default" name="Footer Discuss Link">
+        <xpath expr="//ul[@id='products']" position="inside">
+            <li><a href="/discuss">Discuss</a></li>
+        </xpath>
+    </template>
+
+    <template id="index" name="Discuss">
+        <t t-call="website.layout">
+            <div id="wrap">
+            <div class="oe_structure"/>
+            <div class="container">
+                <div class="o_mail_chat">
+                    <div class="o_mail_chat_sidebar"/>
+                    <div class="o_mail_chat_content">
+                        <div class="o_mail_annoying_notification_bar">
+                            <span class="o_mail_request_permission">Odoo needs your permission to <a href="#"> enable desktop notifications</a>.</span>
+                            <span class="fa fa-close"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="oe_structure"/>
+          </div>
+        </t>
+    </template>
+
+    <!--
+    <t t-name="mail.client_action">
+        <div class="o_mail_chat">
+            <div class="o_mail_chat_sidebar"/>
+            <div class="o_mail_chat_content">
+                <t t-if="widget.notification_bar">
+                    <div class="o_mail_annoying_notification_bar">
+                        <span class="o_mail_request_permission">Odoo needs your permission to <a href="#"> enable desktop notifications</a>.</span>
+                        <span class="fa fa-close"></span>
+                    </div>
+                </t>
+            </div>
+        </div>
+    </t>
+    -->
+
+</odoo>
